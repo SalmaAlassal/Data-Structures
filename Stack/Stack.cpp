@@ -64,8 +64,5 @@ void Stack::expand()
 
 Stack::~Stack(void)
 {
-
+    delete [] arr; // to release memory before the class instance is destroyed
 }
-
-
-
