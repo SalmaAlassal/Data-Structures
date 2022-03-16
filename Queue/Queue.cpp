@@ -37,7 +37,6 @@ template <class T>
 bool Queue<T>::full()
 {
     return (elements == capacity);
-
 }
 
 template <class T>
@@ -47,24 +46,12 @@ T Queue<T>::front()
     return arr[Front];
 }
 
-//template <class T>
-//void Queue<T>::front(T newValue)
-//{
-//    arr[Front] = newValue;
-//}
-
 template <class T>
 T Queue<T>::back()
 {
     assert(!empty());
     return arr[Back];
 }
-
-//template <class T>
-//void Queue<T>::back(T newValue)
-//{
-//    arr[Back] = newValue;
-//}
 
 template <class T>
 void Queue<T>::push(T newValue)
@@ -76,7 +63,7 @@ void Queue<T>::push(T newValue)
     if (elements == 0)
         Front = 0;
 
-    Back = (Back +1 )% capacity;
+    Back = (Back + 1 )% capacity;
     arr[Back] = newValue;
 
     elements++;
@@ -95,7 +82,7 @@ void Queue<T>::pop()
     }
     else
     {
-        Front = ( Front +1 )% capacity;
+        Front = ( Front + 1 )% capacity;
     }
 
     elements--;
