@@ -6,7 +6,7 @@
 
 ![LinkedList](LinkedList.png)
 
-# The functions associated with ArrayList are:
+# The functions associated with LinkedList are:
 
 |Function|Description|
 |--|--|
