@@ -271,5 +271,5 @@ template <class T>
 LinkedList<T>::~LinkedList()
 {
     while(elements!=0)
-		deleteAt(0);
+	deleteAt(0);
 }
