@@ -1,4 +1,4 @@
-## Stack Implementaion using a Dynamic Array in C++
+## Stack Implementaion using a Dynamic Array
 
 Dynamic array overcomes overflow error when the array gets full. This approach is achieved by starting with a default array size and when the array gets full, we dynamically take a new array of bigger size and copy the previous elements to the new array.
 
@@ -15,7 +15,7 @@ Dynamic array overcomes overflow error when the array gets full. This approach i
 | `push(x)` | O(n) |
 | `pop()`   | O(1) |
 
-### Members
+## Members
 
 | Member   | Description |
 |----------|-------------|
@@ -24,7 +24,7 @@ Dynamic array overcomes overflow error when the array gets full. This approach i
 |`elements`| Holds the number of items in the array.|
 
 
-### Constructors & Destructor
+## Constructors & Destructor
 
 | Constructor / Destructor | Description |
 |--------------------------|-------------|
@@ -33,11 +33,11 @@ Dynamic array overcomes overflow error when the array gets full. This approach i
 | `~Stack(void)`           | Release memory using by the array before the class instance is destroyed.|
  
 
-### Private Functions
+## Private Functions
 
 | Function | Description |
 |----------|-------------|
-|'expand()'| Double the stack by twice and copy the previous elements to a new array.|
+|`expand()`| Doubles the stack by twice and copy the previous elements to a new array.|
 
  
 ## Public Functions
