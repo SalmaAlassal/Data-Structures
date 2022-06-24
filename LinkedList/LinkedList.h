@@ -4,55 +4,50 @@ using namespace std;
 template <class T>
 class Node
 {
-    public:
+public:
+    T data;
+    Node *next;
 
-       Node(void);
-       Node(T value);
-
-       T data;
-       Node* next;
+    Node(T value);
 };
 
 template <class T>
 struct operations
 {
-   string type;
-   T value;
-   int pos;
+    string type;
+    T value;
+    int pos;
 };
-
 
 template <class T>
 class LinkedList
 {
 
+private:
     int elements;
 
-    Node<T>* head;
-    Node<T>* tail;
+    Node<T> *head;
+    Node<T> *tail;
 
-    public:
+public:
+    LinkedList(void);
 
-        LinkedList(void);
-        LinkedList(int);
+    int size();
+    bool empty();
 
-        int size();
-        bool empty();
+    T front();
+    T back();
+    T at(int pos);
 
-        T front();
-        T back();
-        T at(int pos);
+    void insert(int pos, T value);
+    void push_front(T value);
+    void push_back(T value);
 
-        void insert(int pos,T value);
-        void push_front(T value);
-        void push_back(T value);
+    void pop_front();
+    void pop_back();
+    void deleteAt(int pos);
 
-        void pop_front();
-        void pop_back();
-        void deleteAt(int pos);
+    void undo();
 
-        void undo();
-
-        ~LinkedList();
-
+    ~LinkedList();
 };

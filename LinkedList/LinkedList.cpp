@@ -1,15 +1,6 @@
 #include "LinkedList.h"
-#define NULL 0
 #include <assert.h>
-#include<stack>
-
-template <class T>
-Node<T>::Node(void)
-{
-    data = NULL;
-    next = NULL;
-}
-
+#include <stack>
 
 template <class T>
 Node<T>::Node(T value)
@@ -18,7 +9,6 @@ Node<T>::Node(T value)
     next = NULL;
 }
 
-
 template <class T>
 LinkedList<T>::LinkedList(void)
 {
@@ -26,21 +16,11 @@ LinkedList<T>::LinkedList(void)
     elements = 0;
 }
 
-
-template <class T>
-LinkedList<T>::LinkedList(int length)
-{
-    head = tail = NULL;
-    elements = length;
-}
-
-
 template <class T>
 int LinkedList<T>::size()
 {
     return elements;
 }
-
 
 template <class T>
 bool LinkedList<T>::empty()
@@ -48,56 +28,52 @@ bool LinkedList<T>::empty()
     return (elements == 0);
 }
 
-
 template <class T>
 T LinkedList<T>::front()
 {
-   return head->data;
+    return head->data;
 }
-
 
 template <class T>
 T LinkedList<T>::back()
 {
-   return tail->data;
+    return tail->data;
 }
-
 
 template <class T>
 T LinkedList<T>::at(int pos)
 {
-    assert( pos >= 0 && pos < elements);
+    assert(pos >= 0 && pos < elements);
 
-    Node<T>* temp = head;
+    Node<T> *temp = head;
 
-    for(int i=0 ; i < pos ; i++)
+    for (int i = 0; i < pos; i++)
         temp = temp->next;
 
     return temp->data;
 }
-
 
 // To store the last operations done
 template <class T>
 operations<T> lastOp;
 
 template <class T>
-stack <operations<T> > buffer;
+stack<operations<T>> buffer;
 
 template <class T>
-void LinkedList<T>::insert(int pos , T value)
+void LinkedList<T>::insert(int pos, T value)
 {
-     assert( pos >= 0 && pos <= elements);
+    assert(pos >= 0 && pos <= elements);
 
-     Node<T>* temp = head;
-     Node<T>* newNode = new Node<T>(value);
+    Node<T> *temp = head;
+    Node<T> *newNode = new Node<T>(value);
 
     if (elements == 0)
     {
         head = tail = newNode;
     }
 
-    if(pos == 0)
+    if (pos == 0)
     {
         newNode->next = head;
         head = newNode;
@@ -105,8 +81,8 @@ void LinkedList<T>::insert(int pos , T value)
     else
     {
 
-        for(int i=0 ; i < pos-1 ; i++)
-           temp = temp->next;
+        for (int i = 0; i < pos - 1; i++)
+            temp = temp->next;
 
         newNode->next = temp->next;
         temp->next = newNode;
@@ -121,11 +97,10 @@ void LinkedList<T>::insert(int pos , T value)
     buffer<T>.push(lastOp<T>);
 }
 
-
 template <class T>
 void LinkedList<T>::push_front(T value)
 {
-    Node<T>* newNode = new Node<T>(value);
+    Node<T> *newNode = new Node<T>(value);
 
     newNode->next = head;
 
@@ -133,38 +108,36 @@ void LinkedList<T>::push_front(T value)
 
     elements++;
 
-     lastOp<T>.type = "push_front";
-     buffer<T>.push(lastOp<T>);
+    lastOp<T>.type = "push_front";
+    buffer<T>.push(lastOp<T>);
 }
-
 
 template <class T>
 void LinkedList<T>::push_back(T value)
 {
 
-    Node<T>* newNode = new Node<T>(value);
+    Node<T> *newNode = new Node<T>(value);
 
-     if (elements == 0)
+    if (elements == 0)
         head = tail = newNode;
-     else
-     {
-         tail->next = newNode;
-         tail = newNode;
-     }
+    else
+    {
+        tail->next = newNode;
+        tail = newNode;
+    }
 
-     elements++;
+    elements++;
 
-     lastOp<T>.type = "push_back";
-     buffer<T>.push(lastOp<T>);
+    lastOp<T>.type = "push_back";
+    buffer<T>.push(lastOp<T>);
 }
-
 
 template <class T>
 void LinkedList<T>::pop_front()
 {
-    assert( !elements == 0);
+    assert(!elements == 0);
 
-    Node<T>* temp = head;
+    Node<T> *temp = head;
 
     head = head->next;
 
@@ -175,18 +148,17 @@ void LinkedList<T>::pop_front()
     elements--;
 
     lastOp<T>.type = "pop_front";
-     buffer<T>.push(lastOp<T>);
+    buffer<T>.push(lastOp<T>);
 }
-
 
 template <class T>
 void LinkedList<T>::pop_back()
 {
-    assert( !elements == 0);
+    assert(!elements == 0);
 
-    Node<T>* temp = head;
+    Node<T> *temp = head;
 
-    for(int i=0 ; i < elements-2 ; i++)
+    for (int i = 0; i < elements - 2; i++)
         temp = temp->next;
 
     tail = temp;
@@ -201,18 +173,16 @@ void LinkedList<T>::pop_back()
 
     lastOp<T>.type = "pop_back";
     buffer<T>.push(lastOp<T>);
-
 }
-
 
 template <class T>
 void LinkedList<T>::deleteAt(int pos)
 {
-    assert( pos >= 0 && pos < elements);
+    assert(pos >= 0 && pos < elements);
 
-    Node<T>* temp = head;
+    Node<T> *temp = head;
 
-    if(pos == 0)
+    if (pos == 0)
     {
         head = head->next;
         lastOp<T>.value = temp->data;
@@ -221,10 +191,10 @@ void LinkedList<T>::deleteAt(int pos)
     else
     {
 
-        for(int i=0 ; i < pos-1 ; i++)
+        for (int i = 0; i < pos - 1; i++)
             temp = temp->next;
 
-        Node<T>* deletedNode = temp->next;
+        Node<T> *deletedNode = temp->next;
 
         temp->next = deletedNode->next;
 
@@ -232,7 +202,7 @@ void LinkedList<T>::deleteAt(int pos)
 
         delete deletedNode;
 
-        if ( pos == elements -1)
+        if (pos == elements - 1)
             tail = temp;
     }
 
@@ -243,7 +213,6 @@ void LinkedList<T>::deleteAt(int pos)
     buffer<T>.push(lastOp<T>);
 }
 
-
 template <class T>
 void LinkedList<T>::undo()
 {
@@ -251,25 +220,24 @@ void LinkedList<T>::undo()
 
     if (lastOp<T>.type == "push_back")
         pop_back();
-    else  if (lastOp<T>.type == "push_front")
+    else if (lastOp<T>.type == "push_front")
         pop_front();
     else if (lastOp<T>.type == "insert")
         deleteAt(lastOp<T>.pos);
     else if (lastOp<T>.type == "pop_back")
         push_back(lastOp<T>.value);
-    else  if (lastOp<T>.type == "pop_front")
+    else if (lastOp<T>.type == "pop_front")
         push_front(lastOp<T>.value);
-    else  if (lastOp<T>.type == "delete")
-        insert(lastOp<T>.pos , lastOp<T>.value);
+    else if (lastOp<T>.type == "delete")
+        insert(lastOp<T>.pos, lastOp<T>.value);
 
     buffer<T>.pop();
     buffer<T>.pop();
 }
 
-
 template <class T>
 LinkedList<T>::~LinkedList()
 {
-    while(elements!=0)
-	deleteAt(0);
+    while (elements != 0)
+        deleteAt(0);
 }
