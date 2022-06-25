@@ -2,23 +2,21 @@
 #include <assert.h>
 
 template <class T>
-Queue<T>::Queue()
+Queue<T>::Queue(void)
 {
-    capacity = 10;
     elements = 0;
-    Front = -1;
-    Back = -1;
-    arr = new T [capacity];
+    capacity = 10;
+    arr = new T[capacity];
+    Front = Back = -1;
 }
 
 template <class T>
-Queue<T>::Queue(int capacity )
+Queue<T>::Queue(int capacity)
 {
-    this -> capacity = capacity;
     elements = 0;
-    Front = -1;
-    Back = -1;
-    arr = new T [this -> capacity];
+    this->capacity = capacity;
+    arr = new T[capacity];
+    front = back = -1;
 }
 
 template <class T>
@@ -56,18 +54,29 @@ T Queue<T>::back()
 template <class T>
 void Queue<T>::push(T newValue)
 {
-
-    if ( capacity == elements )
+    if (elements == capacity)
         expand();
 
     if (elements == 0)
         Front = 0;
 
-    Back = (Back + 1 )% capacity;
+    Back = (Back + 1) % capacity;
+
     arr[Back] = newValue;
 
     elements++;
+}
 
+template <class T>
+void Queue<T>::expand()
+{
+    T *newArr = new T[capacity * 2];
+    for (int i = 0; i < capacity; i++)
+        newArr[i] = arr[i];
+
+    capacity *= 2;
+    delete[] arr;
+    arr = newArr;
 }
 
 template <class T>
@@ -76,33 +85,15 @@ void Queue<T>::pop()
     assert(!empty());
 
     if (elements == 1)
-    {
-        Front = -1;
-        Back = -1;
-    }
+        Front = Back = -1;
     else
-    {
-        Front = ( Front + 1 )% capacity;
-    }
+        Front = (Front + 1) % capacity;
 
     elements--;
-
-}
-
-template <class T>
-void Queue<T>::expand()
-{
-   T* newArr = new T [capacity * 2];
-   for(int i=0 ; i< capacity ; i++)
-     newArr[i] = arr[i];
-
-   capacity *= 2;
-   delete [] arr;
-   arr = newArr;
 }
 
 template <class T>
 Queue<T>::~Queue()
 {
-    delete [] arr;
+    delete[] arr;
 }

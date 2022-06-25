@@ -2,59 +2,28 @@
 #include "Queue.cpp"
 using namespace std;
 
-struct tasks
-{
-    string name;
-    int ID;
-};
-
 int main()
 {
+    Queue<int> q;
 
-    Queue <tasks>q;
-    tasks task;
-    int option;
-    bool exit = false;
-    cout << "************Welcome to task manager************" << endl;
-    while(!exit)
+    q.push(10); // queue: 10
+    q.push(20); //  queue: 10 , 20
+
+    cout << q.front() << ' ' << q.back() << endl; // output: 10 20
+    cout << q.size() << endl;                     // print the size of queue -> 2 at this moment
+
+    q.push(30); // queue: 10 , 20 , 30
+    q.push(40); // queue: 10 , 20 , 30 , 40
+    q.pop();    // delete the first element in the queue -> 10 at this moment
+
+    cout << q.front() << ' ' << q.back() << endl; // output: 20 40
+    cout << q.size() << endl;                     // print the size of queue -> 3 at this moment
+
+    while (q.size() != 0) // loop until container is empty
     {
-        cout<<endl;
-        cout << "To add new task press 1 " << endl;
-        cout << "To remove a task press 2 " <<endl;
-        cout << "To exit press 3 "<< endl;
-
-        cin >> option;
-
-        switch( option )
-        {
-          case 1 :
-          {
-            cout << "Enter taks ID: " << endl;
-            cin >> task.ID;
-            cout << "Enter task name: " << endl;
-            cin >> task.name;
-            q.push(task);
-            break;
-          }
-          case 2:
-          {
-            task = q.front();
-            cout<<"------------------"<<endl;
-            cout << "Taks ID : " <<task.ID<< endl;
-            cout << "Task name : " << task.name<<endl;
-            cout<<"------------------"<<endl;
-
-            q.pop();
-            break;
-          }
-          case 3:
-          {
-
-            exit = true;
-            cout<<"************ Exit ************"<<endl;
-            break;
-          }
-        }
-
+        cout << q.front() << " ";
+        q.pop();
     }
+    
+    // the output of the previous loop is : 20 30 40
 }
