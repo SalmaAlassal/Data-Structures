@@ -1,19 +1,19 @@
-## Stack Implementaion using a Dynamic Array
+## Stack Implementation using a Dynamic Array
 
 Dynamic array overcomes overflow error when the array gets full. This approach is achieved by starting with a default array size and when the array gets full, we dynamically take a new array of bigger size and copy the previous elements to the new array.
 
 ![Explanation](StackExplanation.png)
 
-## Time complexity
+## Time Complexity
 
-| Function  | Description |
-|-----------|------|
-| `size()`  | O(1) |
-| `empty()` | O(1) |
-| `top()`   | O(1) |
-| `expand()`| O(n) |
-| `push(x)` | O(n) |
-| `pop()`   | O(1) |
+| Function  | Complexity |
+|-----------|------------|
+| `size()`  |    O(1)    |
+| `empty()` |    O(1)    |
+| `top()`   |    O(1)    |
+| `expand()`|    O(n)    |
+| `push(x)` |    O(n)    |
+| `pop()`   |    O(1)    |
 
 ## Members
 

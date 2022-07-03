@@ -1,4 +1,4 @@
-# Stack Implementaion using a LinkedList
+# Stack Implementation using a Linked List
 
 Each node contains data and a link to the next node (The next element after the top element). This approach is achieved by using:
  - `Node` class which store the data and a pointer to the next stack node.
@@ -8,14 +8,14 @@ Each node contains data and a link to the next node (The next element after the 
 
 ## Time complexity
 
-| Function  | Description |
-|-----------|------|
-| `size()`  | O(1) |
-| `empty()` | O(1) |
-| `top()`   | O(1) |
-| `push(x)` | O(1) |
-| `pop()`   | O(1) |
-| `clear()` | O(n) |
+| Function  | Complexity |
+|-----------|------------|
+| `size()`  |    O(1)    |
+| `empty()` |    O(1)    |
+| `top()`   |    O(1)    |
+| `push(x)` |    O(1)    |
+| `pop()`   |    O(1)    |
+| `clear()` |    O(n)    |
 
 
 ## Members

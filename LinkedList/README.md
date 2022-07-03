@@ -16,15 +16,15 @@
 
 - **A singly linked list** is a unidirectional linked list. So, you can only traverse it in one direction, i.e., from head node to tail node.
 
-- **A doubly linked list** is a bi-directional linked list. So, you can traverse it in both directions. Unlike singly linked lists, its nodes contain one extra pointer called the previous pointer which points to the previous node.
+- **A doubly linked list** is a bidirectional linked list. So, you can traverse it in both directions. Unlike singly linked lists, its nodes contain one extra pointer called the previous pointer which points to the previous node.
 
 - **A circular Linked list** is a unidirectional linked list. So, you can traverse it in only one direction. But this type of linked list has its last node pointing to the head node. So while traversing, you need to be careful and stop traversing when you revisit the head node.
 
-- **A circular doubly linked list** is a mixture of a doubly linked list and a circular linked list. Like the doubly linked list, it has an extra pointer called the previous pointer, and similar to the circular linked list, its last node points at the head node. This type of linked list is the bi-directional list. So, you can traverse it in both directions.
+- **A circular doubly linked list** is a mixture of a doubly linked list and a circular linked list. Like the doubly linked list, it has an extra pointer called the previous pointer, and similar to the circular linked list, its last node points at the head node. This type of linked list is the bidirectional list. So, you can traverse it in both directions.
 
 ![Types of Linked Lists](imgs/linkedlist-types.png)
 
-## Some Applications of LinkedList
+## Some Applications of Linked List
 
 - **Implementation of stacks and queues.**
 
@@ -52,31 +52,31 @@
 
 - **Image viewer –** Next and Previous images are linked, so can be accessed by the “next” and “previous” buttons.
 
-- **Next and Previous page in a web browser –** We can access the previous and next “url” searched in a web browser by pressing the “back” and “next” buttons as they are connected as a linked list.
+- **Next and Previous page in a web browser –** We can access the previous and next “URL” searched in a web browser by pressing the “back” and “next” buttons as they are connected as a linked list.
 
 - **Music Player –** Songs in the music player are connected to the previous and next song. You can listen to the songs either from the beginning or end of the list.
 
-- **Switching between applications on the Computer –** Using alt+tab on linux or windows, you can swap between running applications. 
+- **Switching between applications on the Computer –** Using alt+tab on Linux or Windows, you can swap between running applications. 
 
 - **Undo Function In Photoshop and Word documents –** Every modification you make to a document or file is saved as nodes. We can return to the previous state of the document by pressing 'Ctrl+Z.'
 
 
 ## Time Complexity
 
-| Function       | Description |
-|----------------|-------------|
-| `size()`       | O(1) |
-| `empty()`      | O(1) |
-| `front()`      | O(1) |
-| `back()`       | O(1) |
-| `at()`         | O(n) |
-| `insert()`     | O(n) |
-| `push_front()` | O(1) |
-| `push_back()`  | O(1) |
-| `pop_front()`  | O(1) |
-| `pop_back()`   | O(n) |
-| `deleteAt()`   | O(n) |
-| `undo()`       | O(n) |
+| Function       | Complexity |
+|----------------|------------|
+| `size()`       |    O(1)    |
+| `empty()`      |    O(1)    |
+| `front()`      |    O(1)    |
+| `back()`       |    O(1)    |
+| `at()`         |    O(n)    |
+| `insert()`     |    O(n)    |
+| `push_front()` |    O(1)    |
+| `push_back()`  |    O(1)    |
+| `pop_front()`  |    O(1)    |
+| `pop_back()`   |    O(n)    |
+| `deleteAt()`   |    O(n)    |
+| `undo()`       |    O(n)    |
 
 
 ## Members
@@ -96,7 +96,7 @@
 |--------------------------|-------------|
 | `Node(value)`            | Stores the value of the node and set the next pointer to NULL. |
 | `LinkedList(void)`       | Initially set head, tail pointers to NULL and the number of elements to 0. |
-| `~LinkedList()`          | Deleting all nodes. |
+| `~LinkedList()`          | Deletes all nodes. |
  
 
 ## Functions

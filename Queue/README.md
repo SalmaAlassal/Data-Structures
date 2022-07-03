@@ -1,4 +1,4 @@
-# Queue Implementaion using a Dynamic Array
+# Queue Implementation using a Dynamic Array
 
 
 - Queues are a type of containers that operate in a first in first out (FIFO) type of arrangement. Elements are inserted at the back (end) and are deleted from the front.
@@ -15,7 +15,7 @@
 
     - The default value for front and back is `-1`, denoting that the queue is empty.
 
-    - When we add one element,the `front` and the `back` of the queue points at the first index of the array. As we add elements to the queue,the tail keeps on moving ahead, while the head remains at the first index.
+    - When we add one element, the `front` and the `back` of the queue points at the first index of the array. As we add elements to the queue, the tail keeps on moving ahead, while the head remains at the first index.
 
     - When we remove element we move the `front` to the next position.
 
@@ -33,21 +33,21 @@
 
 - **Computer systems must often provide a “holding area” for messages between two internal processes or programs, or between two systems over a network. This holding area is usually called a “buffer” and is often implemented as a queue, because we want the message time order to be retained.**
 
-- **Handling hardware or real-time systems interrupts. The interrupts are handled in the order they arrive i.e First come first served.**
+- **Handling hardware or real-time systems interrupts. The interrupts are handled in the order they arrive i.e. First come, first served.**
 
 
 ## Time Complexity
 
-| Function  | Description |
-|-----------|------|
-| `empty()` | O(1) |
-| `size()`  | O(1) |
-| `full()`  | O(1) |
-| `front()` | O(1) |
-| `back()`  | O(1) |
-| `push(x)` | O(n) |
-| `expand()`| O(n) |
-| `pop()`   | O(1) |
+| Function  | Complexity |
+|-----------|------------|
+| `empty()` |    O(1)    |
+| `size()`  |    O(1)    |
+| `full()`  |    O(1)    |
+| `front()` |    O(1)    |
+| `back()`  |    O(1)    |
+| `push(x)` |    O(n)    |
+| `expand()`|    O(n)    |
+| `pop()`   |    O(1)    |
 
 ## Members
 

@@ -1,4 +1,4 @@
-# Vector Implementaion using a Dynamic Array
+# Vector Implementation using a Dynamic Array
 
  - Vectors are used to store elements of similar data types. However, unlike arrays, the size of a vector can grow dynamically.
 
@@ -7,7 +7,7 @@
 
 ## Time Complexity
 
-|     Function    | Description |
+|     Function    | Complexity  |
 |-----------------|-------------|
 | `size()`        |    O(1)     |
 | `capacity()`    |    O(1)     |
@@ -35,7 +35,7 @@
 |--------------------------|-------------|
 | `Vector()`               | Allocates the memory for an array of size 10.|
 | `Vector(capacity)`       | Allocates the memory for an array of size selected by the user.|
-| `~Vector()`              | Release memory using by the array before the class instance is destroyed.|
+| `~Vector()`              | Releases memory using by the array before the class instance is destroyed.|
  
 
 ## Private Functions
